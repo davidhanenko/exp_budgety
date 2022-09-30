@@ -133,8 +133,10 @@ export const displayBudget = function (obj) {
 // display percentages for each expense:
 
 export const displayPercentages = function (percentages) {
-  let fields = document.querySelectorAll(expensesPercLabel);
-
+  let fields = document.querySelectorAll(
+    '.item__percentage'
+  );
+  console.log(fields);
   fields.forEach((current, index) => {
     percentages[index] > 0
       ? (current.textContent = percentages[index] + '%')

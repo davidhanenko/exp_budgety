@@ -29,11 +29,9 @@ const controller = (function () {
     budgetCtrl.calculateBudget();
 
     // Return the budget
-
     const budget = budgetCtrl.getBudget();
 
     // Display the budget on the UI
-
     UICtrl.displayBudget(budget);
   };
 

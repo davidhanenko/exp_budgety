@@ -47,10 +47,18 @@
     <div class="bottom">
         <div class="add">
             <div class="add__container">
-                <select class="add__type">
-                    <option value="inc" selected>+</option>
-                    <option value="exp">-</option>
-                </select>
+                <div class="add__type">
+
+                    <input type="radio" name="type" value="inc" id="inc"
+                        class="add__type--radio" checked>
+                    <label for="inc">+</label>
+
+
+                    <input type="radio" name="type" value="exp" id="exp"
+                        class="add__type--radio">
+                    <label for="exp">-</label>
+
+                </div>
                 <input type="text" class="add__description"
                     placeholder="Add description">
                 <input type="number" class="add__value" placeholder="Value">

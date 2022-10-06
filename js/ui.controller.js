@@ -1,7 +1,10 @@
 const inputDescription = document.querySelector(
   '.add__description'
 );
-const inputType = document.querySelector('.add__type');
+const selectType = document.querySelector('.add__type');
+const inputType = document.querySelector(
+  'input[name="type"]:checked'
+);
 const inputValue = document.querySelector('.add__value');
 const inputBtn = document.querySelector('.add__btn');
 const incomeContainer =
@@ -68,7 +71,7 @@ const nodeListForEach = function (list, callback) {
 export const getInput = function () {
   // object to get input from user
   return {
-    type: inputType.value,
+    type: inputType.checked.value,
     description: inputDescription.value,
     value: parseFloat(inputValue.value),
   };
@@ -136,7 +139,6 @@ export const displayPercentages = function (percentages) {
   let fields = document.querySelectorAll(
     '.item__percentage'
   );
-  console.log(fields);
   fields.forEach((current, index) => {
     percentages[index] > 0
       ? (current.textContent = percentages[index] + '%')
@@ -168,11 +170,11 @@ export const displayMonth = function () {
 
   month = now.getMonth();
 
-  dateLabel.textContent = months[month] + ' / ' + year;
+  dateLabel.textContent = `${months[month]} / ${year}`;
 };
 
 export const changedType = function () {
-  let fields = [inputType, inputDescription, inputValue];
+  let fields = [inputDescription, inputValue];
 
   fields.forEach(cur => {
     cur.classList.toggle('red-focus');
@@ -186,5 +188,6 @@ export const getDOMelements = function () {
     inputBtn,
     container,
     inputType,
+    selectType,
   };
 };

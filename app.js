@@ -18,7 +18,7 @@ const controller = (function () {
     DOM.container.addEventListener('click', ctrlDeleteItem);
 
     // change type of input - income or expense
-    DOM.inputType.addEventListener(
+    DOM.selectType.addEventListener(
       'change',
       UICtrl.changedType
     );
@@ -51,6 +51,8 @@ const controller = (function () {
   const ctrlAddItem = function () {
     // Get the field input data
     let input = UICtrl.getInput();
+
+    console.log(input);
     // button works only if fields are filled
     if (
       input.description !== '' &&

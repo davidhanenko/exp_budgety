@@ -46,6 +46,7 @@ class Expense {
 //calc total
 function calculateTotal(type) {
   let sum = 0;
+
   data.allItems[type].forEach(cur => {
     sum += cur.value;
   });

@@ -1,9 +1,10 @@
+const root = document.querySelector(':root');
 const inputDescription = document.querySelector(
   '.add__description'
 );
 const selectType = document.querySelector('.add__type');
-const inputType = document.querySelector(
-  'input[name="type"]:checked'
+const inputType = document.querySelectorAll(
+  'input[name="type"]'
 );
 const inputValue = document.querySelector('.add__value');
 const inputBtn = document.querySelector('.add__btn');
@@ -25,9 +26,7 @@ const percentageLabel = document.querySelector(
   '.budget__expenses--percentage'
 );
 const container = document.querySelector('.container');
-const expensesPercLabel = document.querySelector(
-  '.item__percentage'
-);
+
 const dateLabel = document.querySelector(
   '.budget__title--month'
 );
@@ -62,16 +61,17 @@ const formatNumber = function (num, type) {
   );
 };
 
-const nodeListForEach = function (list, callback) {
-  for (let i = 0; i < list.length; i++) {
-    callback(list[i], i);
-  }
-};
-
 export const getInput = function () {
   // object to get input from user
+
+  let tempType;
+
+  for (let t of inputType) {
+    if (t.checked) tempType = t.value;
+  }
+
   return {
-    type: inputType.checked.value,
+    type: tempType,
     description: inputDescription.value,
     value: parseFloat(inputValue.value),
   };
@@ -131,6 +131,10 @@ export const displayBudget = function (obj) {
   obj.percentage > 0
     ? (percentageLabel.textContent = obj.percentage + '%')
     : (percentageLabel.textContent = '--');
+
+  if (obj.budget < 0) {
+    root.style.setProperty('--title', '#ff3e37');
+  }
 };
 
 // display percentages for each expense:

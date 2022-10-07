@@ -50,6 +50,7 @@ function calculateTotal(type) {
   data.allItems[type].forEach(cur => {
     sum += cur.value;
   });
+
   data.totals[type] = sum;
 }
 

@@ -18,7 +18,7 @@
     <div class="top">
         <div class="budget">
             <div class="budget__title">
-                Available Budget in <span
+                Budget for <span
                     class="budget__title--month">%Month%</span>:
             </div>
 
@@ -48,16 +48,17 @@
         <div class="add">
             <div class="add__container">
                 <div class="add__type">
+                    <div>
+                        <input type="radio" name="type" value="inc" id="inc"
+                            class="add__type--radio" checked>
+                        <label for="inc">+</label>
+                    </div>
 
-                    <input type="radio" name="type" value="inc" id="inc"
-                        class="add__type--radio" checked>
-                    <label for="inc">+</label>
-
-
-                    <input type="radio" name="type" value="exp" id="exp"
-                        class="add__type--radio">
-                    <label for="exp">-</label>
-
+                    <div>
+                        <input type="radio" name="type" value="exp" id="exp"
+                            class="add__type--radio">
+                        <label for="exp">-</label>
+                    </div>
                 </div>
                 <input type="text" class="add__description"
                     placeholder="Add description">

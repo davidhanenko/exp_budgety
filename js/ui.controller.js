@@ -34,13 +34,9 @@ const dateLabel = document.querySelector(
 const formatNumber = function (num, type) {
   let numSplit, int, dec;
   /*
-           + or - before number
-           exactly 2 decimal points
-           comma separating thousands
-           
            2310.4567 -> 2,310.46
            2000 -> 2,000.00
-           */
+  */
 
   num = Math.abs(num);
   num = num.toFixed(2);
@@ -85,22 +81,22 @@ export const addListItem = function (obj, type) {
   if (type === 'inc') {
     element = incomeContainer;
 
-    html = `<div class="item clearfix" id="inc-${
+    html = `<div class="item  " id="inc-${
       obj.id
     }"><div class="item__description">${
       obj.description
-    }</div><div class="right clearfix"><div class="item__value">${formatNumber(
+    }</div><div class="right  "><div class="item__value">$ &nbsp; ${formatNumber(
       obj.value,
       type
     )}</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>`;
   } else if (type === 'exp') {
     element = expensesContainer;
 
-    html = `<div class="item clearfix" id="exp-${
+    html = `<div class="item  " id="exp-${
       obj.id
     }"><div class="item__description">${
       obj.description
-    }</div><div class="right clearfix"><div class="item__value">${formatNumber(
+    }</div><div class="right"><div class="item__value">$ &nbsp; ${formatNumber(
       obj.value,
       type
     )}</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>`;
@@ -124,9 +120,12 @@ export const clearField = function () {
 };
 
 export const displayBudget = function (obj) {
-  budgetLabel.textContent = obj.budget;
-  incomeLabel.textContent = obj.totalInc;
-  expensesLabel.textContent = obj.totalExp;
+  budgetLabel.textContent =
+    obj.budget > 0 ? `$ ${obj.budget}` : 0;
+  incomeLabel.textContent =
+    obj.totalInc > 0 ? `$ ${obj.totalInc}` : 0;
+  expensesLabel.textContent =
+    obj.totalExp > 0 ? `$ ${obj.totalExp}` : 0;
 
   obj.percentage > 0
     ? (percentageLabel.textContent = `${obj.percentage}%`)
@@ -148,7 +147,7 @@ export const displayPercentages = function (percentages) {
   );
   fields.forEach((current, index) => {
     percentages[index] > 0
-      ? (current.textContent = percentages[index] + '%')
+      ? (current.textContent = `${percentages[index]}%`)
       : (current.textContent = '--');
   });
 };

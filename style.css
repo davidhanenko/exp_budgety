@@ -15,11 +15,6 @@
   --dark: #151515;
 }
 
-.clearfix::after {
-  content: '';
-  display: table;
-  clear: both;
-}
 
 body {
   color: #555;
@@ -308,15 +303,3 @@ h2 {
   transform: translateX(-20px);
 }
 
-.unpaid {
-  background-color: var(--lightRed) !important;
-  cursor: pointer;
-  color: var(--red);
-}
-
-.unpaid .item__percentage {
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
-}
-.unpaid:hover .item__description {
-  font-weight: 900;
-}

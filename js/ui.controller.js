@@ -88,7 +88,7 @@ export const addListItem = function (obj, type) {
     }</div><div class="right  "><div class="item__value">$ &nbsp; ${formatNumber(
       obj.value,
       type
-    )}</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>`;
+    )}</div><div class="item__delete"><button class="item__delete--btn"><i class="fa-regular fa-circle-xmark"></i></button></div></div></div>`;
   } else if (type === 'exp') {
     element = expensesContainer;
 
@@ -99,7 +99,7 @@ export const addListItem = function (obj, type) {
     }</div><div class="right"><div class="item__value">$ &nbsp; ${formatNumber(
       obj.value,
       type
-    )}</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>`;
+    )}</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="fa-regular fa-circle-xmark"></i></button></div></div></div>`;
   }
 
   // Insert the HTML into the DOM

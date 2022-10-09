@@ -52,7 +52,6 @@ const controller = (function () {
     // Get the field input data
     let input = UICtrl.getInput();
 
-    console.log(input);
     // button works only if fields are filled
     if (
       input.description !== '' &&

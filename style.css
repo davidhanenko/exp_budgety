@@ -15,7 +15,6 @@
   --dark: #151515;
 }
 
-
 body {
   color: #555;
   font-family: Open Sans;
@@ -141,6 +140,7 @@ body {
 
 .add__type {
   width: 50px;
+  font-size: 18px;
 }
 
 .add__type--radio:nth-of-type(2) {
@@ -168,6 +168,8 @@ body {
 }
 
 .add__btn {
+  width: 35px;
+  height: 35px;
   font-size: 35px;
   background: none;
   border: none;
@@ -177,6 +179,11 @@ body {
   vertical-align: middle;
   line-height: 1.1;
   margin-left: 10px;
+  transition: 0.2s;
+}
+
+.add__btn:hover {
+  transform: scale(1.1);
 }
 
 .add__btn:active {
@@ -284,6 +291,12 @@ h2 {
   vertical-align: middle;
   line-height: 1;
   display: none;
+
+  transition: all 0.2s;
+}
+
+.item__delete--btn:hover {
+  transform: scale(1.1);
 }
 
 .item__delete--btn:focus {
@@ -302,4 +315,3 @@ h2 {
 .item:hover .item__percentage {
   transform: translateX(-20px);
 }
-

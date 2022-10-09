@@ -129,16 +129,19 @@ export const displayBudget = function (obj) {
   expensesLabel.textContent = obj.totalExp;
 
   obj.percentage > 0
-    ? (percentageLabel.textContent = obj.percentage + '%')
+    ? (percentageLabel.textContent = `${obj.percentage}%`)
     : (percentageLabel.textContent = '--');
 
-  if (obj.budget < 0) {
-    root.style.setProperty('--title', '#ff3e37');
-  }
+  obj.budget < 0
+    ? root.style.setProperty('--title', '#ff3e37')
+    : root.style.setProperty('--title', '#d4d4d4');
+
+  obj.budget < 0
+    ? root.style.setProperty('--percentage', '#ff3e37 ')
+    : root.style.setProperty('--percentage', '#151515');
 };
 
 // display percentages for each expense:
-
 export const displayPercentages = function (percentages) {
   let fields = document.querySelectorAll(
     '.item__percentage'

@@ -168,7 +168,7 @@ export const displayMonth = function () {
     'Aug',
     'Sep',
     'Oct',
-    'Now',
+    'Nov',
     'Dec',
   ];
 
